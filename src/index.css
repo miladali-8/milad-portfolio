@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-cyber-bg: #09090b;
+  --color-cyber-card: rgba(18, 18, 24, 0.65);
+  --color-cyber-accent: #3b82f6;
+  --color-cyber-red: #ef4444;
+  --color-cyber-green: #10b981;
+  --color-cyber-text: #a1a1aa;
+  --color-cyber-title: #ffffff;
+
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: "Space Grotesk", "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-cyber-bg text-cyber-text font-sans overflow-x-hidden antialiased;
+    scroll-behavior: smooth;
+  }
+
+  /* Sleek Minimal Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #09090b;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
+  }
+}
+
+/* Elegant Mouse Spotlight */
+.spotlight-container {
+  position: relative;
+}
+
+.spotlight-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(59, 130, 246, 0.025),
+    transparent 80%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Modern Card Glassmorphism */
+.cyber-glass {
+  background: rgba(18, 18, 24, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cyber-glass-blue {
+  background: rgba(18, 18, 24, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(59, 130, 246, 0.08);
+}
+
+.cyber-glass-red {
+  background: rgba(18, 18, 24, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(239, 68, 68, 0.08);
+}
+
+/* Floating Background Blobs Animation */
+@keyframes float-blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(40px, -60px) scale(1.1); }
+  66% { transform: translate(-30px, 30px) scale(0.95); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: float-blob 20s infinite ease-in-out;
+}
