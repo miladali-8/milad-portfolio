@@ -106,8 +106,9 @@ const Contact = () => {
                   <Mail className="text-zinc-500" size={16} />
                   <div>
                     <span className="text-[10px] text-zinc-500 block font-mono">DIRECT EMAIL</span>
-                    <a href="mailto:miladlai526@gmail.com" className="hover:text-white transition-colors font-medium">
-                      miladlai526@gmail.com
+                    <a href="mailto:miladali526@gmail.com" className="hover:text-white transition-colors font-medium">
+                      miladali526@gmail.com
+                
                     </a>
                   </div>
                 </div>
@@ -180,7 +181,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full bg-zinc-950 border border-zinc-800 hover:border-zinc-750 focus:border-zinc-650 rounded-xl px-3.5 py-2 text-xs font-sans text-white placeholder-zinc-600 outline-none transition-all duration-300"
-                    placeholder="Your email"
+                    placeholder="miladali526@gmail.com"
                     required
                   />
                 </div>
